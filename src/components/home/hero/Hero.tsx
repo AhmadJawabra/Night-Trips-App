@@ -1,15 +1,12 @@
 import './hero.scss';
-import { Component } from 'react';
 import { Navbar } from '../navbar/Navbar';
 import { Banner } from './Banner';
+import { Social } from './social/Social';
 
-export class Hero extends Component {
-    render() {
-        return (
-            <div className="hero">
-                <Navbar/>
-                <Banner/>
-            </div>
-        );
-    }
-}
+export const Hero = () => (
+    <div className="hero">
+        <Navbar/>
+        <Banner/>
+        <Social/>
+    </div>
+);
