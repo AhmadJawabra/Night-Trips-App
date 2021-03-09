@@ -1,0 +1,96 @@
+@import "../../../assets/css/variables.scss";
+
+nav.main-nav {
+    padding: 1rem 0;
+    position: relative;
+    color: $secondary-color;
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: static;
+    }
+
+
+    .logo {
+        h2 {
+            color: white;
+            font-size: 2.25rem;
+
+            span {
+                color: #3EE1D0;
+            }
+        }
+    }
+
+    .btns-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+
+        .search-icon {
+            color: inherit;
+        }
+
+        .toggle-nav-btn {
+            display: block;
+            padding: 1rem 2.5rem;
+            background: $primary-color;
+            color: inherit;
+            box-shadow: 5px 15px 40px rgba(0, 201, 224, 0.2);
+            border-radius: 48px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    .links-container {
+        background-color: white;
+        position: absolute;
+        top: 82px;
+        right: 0;
+        z-index: 1;
+        overflow: hidden;
+        width: 310px;
+        height: calc(100vh - (82px + 2rem));
+        transform: translateX(150%);
+        transition: transform 0.3s;
+        border-radius: 0.5rem 0 0 0.5rem;
+
+
+        li {
+            text-align: center;
+
+            a,
+            button {
+                display: block;
+                font-family: $lato-font;
+                font-weight: 900;
+                line-height: 100%;
+                padding: 0.75rem 1rem;
+                text-transform: capitalize;
+                width: 100%;
+                color: inherit;
+
+                &.active {
+                    background-image: linear-gradient($secondary-color, $primary-color);
+                    color: ghostwhite;
+                    border-radius: 5px;
+
+                    button {
+                        font-weight: 900 !important;
+                    }
+                }
+            }
+        }
+    }
+
+    &.open {
+        .links-container {
+            transform: translateX(0);
+        }
+    }
+
+}

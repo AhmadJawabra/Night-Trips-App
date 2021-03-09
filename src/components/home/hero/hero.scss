@@ -1,4 +1,11 @@
 .hero {
-  background: url("../../../assets/images/hero.svg");
-  height: 100vh;
+    background: url("../../../assets/images/hero.svg");
+    min-height: 100vh;
+    padding-top: 2rem;
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

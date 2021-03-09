@@ -1,5 +1,162 @@
-@import "variables";
+@import "variables.scss";
+
+:root {
+    font-size: 16px;
+
+    @media screen and (max-width: 600px) {
+        font-size: 12px;
+    }
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
 body {
-  
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden auto;
+    font-size: 1rem;
+    -webkit-user-select: none;
+
+    font-family: $mainFont, $subFont;
+    color: $text-color;
+    background-color: #FFF;
+
+    &::-webkit-scrollbar {
+        width: 0.45rem;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $primary-color;
+        border-radius: 20px;
+    }
+}
+
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    font-size: 3vmax;
+}
+
+h2,
+h3 {
+    text-transform: capitalize;
+    margin: 0;
+}
+
+h2 {
+    font-size: 3rem;
+
+    @media (max-width: 700px) {
+        font-size: 2rem;
+    }
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:active,
+    &:focus {
+        color: inherit;
+    }
+}
+
+input,
+button,
+textarea {
+    border: none;
+    background-color: transparent;
+    font-size: 1rem;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    font-family: inherit;
+}
+
+button:not(:disabled),
+select,
+input[type="submit"],
+input[type="date"],
+input[type="color"] {
+    cursor: pointer;
+}
+
+input,
+textarea {
+    color: inherit;
+
+    &::-webkit-input-placeholder {
+        color: #CECECE;
+        text-transform: capitalize;
+        font: 600 smaller $arimo-font;
+        transition: opacity 0.3s;
+    }
+
+    &:focus::-webkit-input-placeholder {
+        opacity: 0;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        box-shadow: 0 0 0 30px #FAFAFA inset !important;
+        color: $text-color !important;
+    }
+}
+
+input {
+    &[type="number"] {
+        appearance: none;
+
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+            appearance: none;
+            margin: 0;
+        }
+    }
+
+    &[type="color"] {
+        appearance: none;
+
+        &::-webkit-color-swatch {
+            border: none;
+        }
+    }
+}
+
+textarea {
+    resize: none;
+}
+
+button:disabled {
+    cursor: auto;
+}
+
+:focus {
+    outline: none !important;
+}
+
+.container {
+    width: 80vw !important;
+    padding: 0 1rem;
+    margin: 0 auto;
+    position: relative;
+
+    @media (max-width: 476px) {
+        width: 100% !important;
+    }
 }
