@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap");
+
+//-*----------  START FONTS BASE  ----------*/
+
+$montserrat-font: "Montserrat";
+$poppins-font: "Poppins";
+$roboto-font: "Roboto";
+$lato-font: "Lato";
+$oswald-font: "Oswald", sans-serif;
+$righteous-font: "Righteous", cursive;
+$monoton-font: "Monoton", cursive;
+$ubuntu-font: "Ubuntu", sans-serif;
+$arimo-font: "Arimo", sans-serif;
+
+//-*----------  END FONTS BASE  ----------*/
+
+$primary-color: #00C9E0;
+$secondary-color: #eee;
+$text-color: #2d2d2d;
+$primaryBackground-color: #011627;
+$secondaryBackground-color: #E5E5E5;
+$primaryBorder-color: #41EAD4;
+
+$mainFont: $roboto-font;
+$subFont: $montserrat-font;

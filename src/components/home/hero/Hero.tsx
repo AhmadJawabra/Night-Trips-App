@@ -1,12 +1,13 @@
 import './hero.scss';
-import {Component} from "react";
+import { Navbar } from '../navbar/Navbar';
+import { Banner } from './Banner';
+import { Social } from './social/Social';
+import { dataProvider } from '../../../services/DataProvider';
 
-export class Hero extends Component {
-    render() {
-        return (
-            <div className="hero">
-
-            </div>
-        );
-    }
-}
+export const Hero = () => (
+    <div className="hero" style={ { background: `#fff url("${ dataProvider.tripImage('hero') }")` } }>
+        <Navbar/>
+        <Banner/>
+        <Social/>
+    </div>
+);
