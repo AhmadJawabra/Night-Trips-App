@@ -1,5 +1,6 @@
 import './navbar.scss';
 import { Component, ReactNode } from 'react';
+import { BaseButton } from '../../common/baseButton/BaseButton';
 
 interface INavbarState {
     open: boolean;
@@ -18,7 +19,7 @@ export class Navbar extends Component<object, INavbarState> {
 
                     <div className="btns-container">
                         <button className="search-icon"><i className="fas fa-search"/></button>
-                        <button className="toggle-nav-btn" onClick={ () => this.setState({ open: !open }) }>menu</button>
+                        <BaseButton onClick={ () => this.setState({ open: !open }) } text="menu"/>
                     </div>
 
                     <ul className="links-container">

@@ -1,9 +1,11 @@
 @import "../../../assets/css/variables";
 
 .hero {
-    background: url("../../../assets/images/hero.svg");
+    background-size: cover !important;
     min-height: 100vh;
     padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
 
     .banner {
         display: flex;

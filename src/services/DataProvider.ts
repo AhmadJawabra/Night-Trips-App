@@ -9,8 +9,8 @@ class DataProvider {
         return data.tripDescription;
     }
 
-    get tripImages(): string[] {
-        return data.images;
+    tripImage(imageName: string): string {
+        return data.images.find((image: string) => image.includes(imageName))!;
     }
 }
 

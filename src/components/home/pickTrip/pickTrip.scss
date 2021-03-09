@@ -1,0 +1,242 @@
+@import "../../../assets/css/variables";
+
+.pick-trip {
+    background: $primaryBackground-color;
+    color: white;
+
+    .container {
+        padding: 2rem 5rem 6.5rem;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+
+        h2 {
+            font-size: 4.5rem;
+            line-height: 100%;
+        }
+
+        p {
+            line-height: 1.6;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+
+            &.animate-paragraph {
+                animation: HideParagraph 1s;
+            }
+
+            i {
+                color: $primaryBorder-color;
+                font-size: 1.25rem;
+                cursor: pointer;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: scale(1.2);
+                }
+            }
+        }
+
+        @media (max-width: 1200px) {
+            flex-direction: column;
+        }
+
+
+        @keyframes HideParagraph {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-50px);
+                opacity: 0.5;
+            }
+
+            100% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+        }
+    }
+
+    ul.tabs {
+        display: flex;
+        gap: 1rem;
+        position: relative;
+        margin: 2rem 0;
+
+        &:after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $primaryBorder-color;
+            opacity: 0.3;
+            border-radius: 13px;
+        }
+
+        li {
+            padding-bottom: 2rem;
+            border-radius: 2px;
+            flex: 1;
+            text-align: center;
+            cursor: pointer;
+
+            &.active {
+                color: $primaryBorder-color;
+                border-bottom: 2px solid currentColor;
+            }
+        }
+    }
+
+    .gallery {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+        gap: 7rem;
+        margin-top: 6rem;
+
+        .image-container {
+            $lineWidth: 100px;
+            position: relative;
+
+            .content {
+                position: relative;
+                z-index: 2;
+                height: 550px;
+
+                img {
+                    display: block;
+                    max-width: 100%;
+                    height: 100%;
+                    border-radius: 0.5rem;
+                }
+
+                h4 {
+                    position: absolute;
+                    top: 50%;
+                    left: 0;
+                    transform: translate(-$lineWidth / 2, -50%);
+                    white-space: pre-line;
+                    word-spacing: 3px;
+                    line-height: 1.6;
+                }
+
+                .actions {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+
+                    button {
+                        padding: calc(32.5px / 2);
+                        background-color: $primaryBackground-color;
+                        color: white;
+                        box-shadow: -10px 14px 24px rgba(1, 22, 39, 0.08);
+
+
+                        &:first-of-type {
+                            margin-right: 0.1rem;
+                            border-radius: 5px 0 0 0;
+                        }
+                    }
+                }
+
+                &::before, &::after {
+                    position: absolute;
+                    top: 43%;
+                    left: 0;
+                }
+
+                &::before {
+                    content: "";
+                    height: 12px;
+                    width: $lineWidth;
+                    border-top: 2px solid $primary-color;
+                    border-left: 2px solid $primary-color;
+                    transform: translate(-50%, -20px);
+                }
+
+                &::after {
+                    content: attr(data-index);
+                    transform: translate(-$lineWidth / 2, -45%);
+                    font-weight: bold;
+                    letter-spacing: 2px;
+                    color: $primary-color;
+                }
+            }
+
+            .dots {
+                height: 200px;
+                display: flex;
+                gap: 0.75rem;
+                position: absolute;
+                bottom: 0;
+                left: -50%;
+                z-index: 1;
+                transform: translate(65%, 25%);
+
+                span {
+                    height: 100%;
+                    border-left: 10px dotted $primaryBorder-color;
+                }
+            }
+        }
+
+        .info {
+            p {
+                line-height: 1.6;
+                margin: 1.65rem 0;
+                //width: 50%;
+            }
+        }
+
+        @media (max-width: 1100px) {
+            .info {
+                text-align: center;
+            }
+        }
+    }
+
+
+    .social-links {
+        width: fit-content;
+        margin-left: auto;
+        margin-top: 2rem;
+
+        h6 {
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 1.25rem;
+            color: $primary-color;
+            position: relative;
+            border-bottom: 2px solid $primary-color;
+            padding: 0 0.75rem 0.75rem 0;
+            border-radius: 2px;
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                right: 0;
+                width: 1px;
+                height: 78%;
+                background-color: $primary-color;
+                border-radius: 2px;
+            }
+        }
+    }
+
+}
