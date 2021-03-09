@@ -55,9 +55,10 @@ nav.main-nav {
         overflow: hidden;
         width: 310px;
         height: calc(100vh - (82px + 2rem));
+        border-radius: 0.5rem 0 0 0.5rem;
+        color: $text-color;
         transform: translateX(150%);
         transition: transform 0.3s;
-        border-radius: 0.5rem 0 0 0.5rem;
 
 
         li {
