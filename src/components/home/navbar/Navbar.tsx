@@ -18,7 +18,7 @@ export class Navbar extends Component<object, INavbarState> {
                     <div className="logo"><h2>NT<span>.</span></h2></div>
 
                     <div className="btns-container">
-                        <button className="search-icon" name="search"><i className="fas fa-search"/></button>
+                        <button className="search-icon" aria-label="search"><i className="fas fa-search"/></button>
                         <BaseButton onClick={ () => this.setState({ open: !open }) } text="menu"/>
                     </div>
 
