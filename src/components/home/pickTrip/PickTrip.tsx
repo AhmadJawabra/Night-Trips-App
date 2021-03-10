@@ -1,6 +1,6 @@
 import './pickTrip.scss';
 import React, { useState } from 'react';
-import { generateRandomId } from '../../../util';
+import { randomIdGenerator } from '../../../util';
 import { dataProvider } from '../../../services/DataProvider';
 import { BaseButton } from '../../common/baseButton/BaseButton';
 
@@ -22,10 +22,10 @@ const btnText = 'SEE OUR LATEST OFFER';
 const subTitle = 'GRAND DUNES \n LANDSCAPE';
 
 const tabsContent: Tabs = [
-    { id: generateRandomId(), title: 'Chill Adventure', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
-    { id: generateRandomId(), title: 'Spooky Times', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
-    { id: generateRandomId(), title: 'Desert Madness', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
-    { id: generateRandomId(), title: 'Out in the wild', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: randomIdGenerator(), title: 'Chill Adventure', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: randomIdGenerator(), title: 'Spooky Times', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: randomIdGenerator(), title: 'Desert Madness', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: randomIdGenerator(), title: 'Out in the wild', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
 ];
 
 const handlePrevNext = (direction: 'previous' | 'next', tabs: Tabs, currentTabId: string): string => {

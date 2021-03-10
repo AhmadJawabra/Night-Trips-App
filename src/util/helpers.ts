@@ -1,1 +1,1 @@
-export const generateRandomId = (suffix: string = "item") => `${ suffix }-${ Math.floor(Math.random() * 1e9).toString(16) }`;
+export const randomIdGenerator = (suffix: string = 'item', length: number = 1e9) => `${ suffix }-${ Math.floor(Math.random() * length).toString(16) }`;
