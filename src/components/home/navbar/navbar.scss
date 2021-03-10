@@ -57,14 +57,24 @@ nav.main-nav {
         height: calc(100vh - (82px + 2rem));
         border-radius: 0.5rem 0 0 0.5rem;
         color: $text-color;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        gap: 2rem;
+        padding: 3rem 0;
         transform: translateX(150%);
         transition: transform 0.3s;
 
 
         li {
             text-align: center;
+            transition: background-color 0.3s, padding-left 0.3s;
 
-            a,
+            &:hover {
+                background-color: $purple-color;
+                padding-left: 7px;
+            }
+
             button {
                 display: block;
                 font-family: $lato-font;
@@ -76,13 +86,7 @@ nav.main-nav {
                 color: inherit;
 
                 &.active {
-                    background-image: linear-gradient($secondary-color, $primary-color);
-                    color: ghostwhite;
-                    border-radius: 5px;
-
-                    button {
-                        font-weight: 900 !important;
-                    }
+                    color: $primary-color;
                 }
             }
         }

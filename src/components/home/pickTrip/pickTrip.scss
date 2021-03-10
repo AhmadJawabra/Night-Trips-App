@@ -202,17 +202,18 @@
         }
     }
 
-
     .social-links {
         width: fit-content;
         margin-left: auto;
         margin-top: 2rem;
 
-        h6 {
+        span {
             font-weight: bold;
             margin-bottom: 1rem;
             text-transform: uppercase;
             letter-spacing: 2px;
+            display: block;
+            font-size: 85%;
         }
 
         .social-icons {
