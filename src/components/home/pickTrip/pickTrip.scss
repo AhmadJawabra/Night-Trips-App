@@ -117,7 +117,7 @@
                     border-radius: 0.5rem;
                 }
 
-                h4 {
+                span {
                     position: absolute;
                     top: 50%;
                     left: 0;
@@ -125,6 +125,7 @@
                     white-space: pre-line;
                     word-spacing: 3px;
                     line-height: 1.6;
+                    font-weight: bold;
                 }
 
                 .actions {
@@ -232,7 +233,7 @@
                 position: absolute;
                 bottom: -2px;
                 right: 0;
-                width: 1px;
+                width: 2px;
                 height: 78%;
                 background-color: $primary-color;
                 border-radius: 2px;

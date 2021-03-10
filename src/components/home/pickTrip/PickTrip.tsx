@@ -4,7 +4,7 @@ import { generateRandomId } from '../../../util';
 import { dataProvider } from '../../../services/DataProvider';
 import { BaseButton } from '../../common/baseButton/BaseButton';
 
-type Tabs = { id: string, title: string, decs: string, url: string, btnText: string, subDesc: string }[];
+type Tabs = { id: string, title: string, decs: string, url: string, btnText: string, subTitle: string }[];
 
 const description = `
     <p>
@@ -19,13 +19,13 @@ const description = `
 `;
 
 const btnText = 'SEE OUR LATEST OFFER';
-const subDesc = 'GRAND DUNES \n LANDSCAPE';
+const subTitle = 'GRAND DUNES \n LANDSCAPE';
 
 const tabsContent: Tabs = [
-    { id: generateRandomId(), title: 'Chill Adventure', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subDesc },
-    { id: generateRandomId(), title: 'Spooky Times', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subDesc },
-    { id: generateRandomId(), title: 'Desert Madness', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subDesc },
-    { id: generateRandomId(), title: 'Out in the wild', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subDesc },
+    { id: generateRandomId(), title: 'Chill Adventure', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: generateRandomId(), title: 'Spooky Times', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: generateRandomId(), title: 'Desert Madness', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
+    { id: generateRandomId(), title: 'Out in the wild', decs: description, url: dataProvider.tripImage('gallery-one'), btnText, subTitle },
 ];
 
 const handlePrevNext = (direction: 'previous' | 'next', tabs: Tabs, currentTabId: string): string => {
@@ -61,18 +61,18 @@ export const PickTrip: React.FC = () => {
                 </ul>
 
                 <div className="wrapper">
-                    { tabsContent.map(({ id, title, url, decs, subDesc, btnText }, idx) => (
+                    { tabsContent.map(({ id, title, url, decs, subTitle, btnText }, idx) => (
                         activeTab === id &&
                         <div className="gallery" key={ id }>
                             <div className="image-container">
                                 <div className="content" data-index={ `${ (idx + 1) < 10 ? `0${ idx + 1 }` : idx + 1 }.` }>
-                                    <img src={ url } alt={ subDesc }/>
+                                    <img src={ url } alt={ subTitle }/>
 
-                                    <h4>{ subDesc }</h4>
+                                    <span>{ subTitle }</span>
 
                                     <div className="actions">
-                                        <button onClick={ () => setActiveTab(handlePrevNext('previous', tabsContent, id)) } name="previous"><i className="fas fa-arrow-left"/></button>
-                                        <button onClick={ () => setActiveTab(handlePrevNext('next', tabsContent, id)) } name="next"><i className="fas fa-arrow-right"/></button>
+                                        <button onClick={ () => setActiveTab(handlePrevNext('previous', tabsContent, id)) } aria-label="previous"><i className="fas fa-arrow-left"/></button>
+                                        <button onClick={ () => setActiveTab(handlePrevNext('next', tabsContent, id)) } aria-label="next"><i className="fas fa-arrow-right"/></button>
                                     </div>
                                 </div>
 
