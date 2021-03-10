@@ -18,14 +18,14 @@ export class Navbar extends Component<object, INavbarState> {
                     <div className="logo"><h2>NT<span>.</span></h2></div>
 
                     <div className="btns-container">
-                        <button className="search-icon"><i className="fas fa-search"/></button>
+                        <button className="search-icon" name="search"><i className="fas fa-search"/></button>
                         <BaseButton onClick={ () => this.setState({ open: !open }) } text="menu"/>
                     </div>
 
                     <ul className="links-container">
-                        <li>
-                            <button>services</button>
-                        </li>
+                        <li><button className="active">home</button></li>
+                        <li><button>about</button></li>
+                        <li><button>services</button></li>
                     </ul>
                 </div>
             </nav>

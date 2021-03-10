@@ -71,8 +71,8 @@ export const PickTrip: React.FC = () => {
                                     <h4>{ subDesc }</h4>
 
                                     <div className="actions">
-                                        <button onClick={ () => setActiveTab(handlePrevNext('previous', tabsContent, id)) }><i className="fas fa-arrow-left"/></button>
-                                        <button onClick={ () => setActiveTab(handlePrevNext('next', tabsContent, id)) }><i className="fas fa-arrow-right"/></button>
+                                        <button onClick={ () => setActiveTab(handlePrevNext('previous', tabsContent, id)) } name="previous"><i className="fas fa-arrow-left"/></button>
+                                        <button onClick={ () => setActiveTab(handlePrevNext('next', tabsContent, id)) } name="next"><i className="fas fa-arrow-right"/></button>
                                     </div>
                                 </div>
 
@@ -98,7 +98,7 @@ export const PickTrip: React.FC = () => {
                                 <BaseButton text={ btnText } onClick={ () => undefined }/>
 
                                 <div className="social-links">
-                                    <h6>share it:</h6>
+                                    <span>share it:</span>
 
                                     <div className="social-icons">
                                         <i className="fab fa-twitter"/>
