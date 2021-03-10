@@ -1,6 +1,16 @@
 import { data } from '../api-mockup/trip.json';
 
 class DataProvider {
+    private static instance: DataProvider;
+
+    private constructor() {}
+
+    static getInstance(): DataProvider {
+        if (!DataProvider.instance) DataProvider.instance = new DataProvider();
+
+        return DataProvider.instance;
+    }
+
     get tripName(): string {
         return data.tripName;
     }
@@ -14,4 +24,4 @@ class DataProvider {
     }
 }
 
-export const dataProvider = new DataProvider();
+export const dataProvider = DataProvider.getInstance();
